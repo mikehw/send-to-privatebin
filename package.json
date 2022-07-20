@@ -3,6 +3,7 @@
   "displayName": "send-to-privatebin",
   "description": "Quickly send the current document or selection to PrivateBin",
   "version": "0.0.1",
+  "author": {"name": "Mike White"},
   "engines": {
     "vscode": "^1.69.0"
   },
