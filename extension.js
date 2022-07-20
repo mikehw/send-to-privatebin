@@ -23,12 +23,15 @@ function activate(context) {
       // The code you place here will be executed every time your command is executed
       const editor = vscode.window.activeTextEditor;
       if (!editor) {
+        vscode.window.showInformationMessage("No text selected")
         return; // No open text editor
       }
       const selection = editor.selection;
       const text = editor.document.getText(selection);
       if (text) {
         sendTextToPrivateBin(text);
+      } else {
+        vscode.window.showInformationMessage("No text selected")
       }
     }
   );
@@ -41,11 +44,14 @@ function activate(context) {
       // The code you place here will be executed every time your command is executed
       const editor = vscode.window.activeTextEditor;
       if (!editor) {
+        vscode.window.showInformationMessage("No document found")
         return; // No open text editor
       }
       const text = editor.document.getText();
       if (text) {
         sendTextToPrivateBin(text);
+      } else {
+        vscode.window.showInformationMessage("No document found")
       }
     }
   );

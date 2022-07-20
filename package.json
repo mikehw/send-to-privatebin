@@ -4,6 +4,10 @@
   "description": "Quickly send the current document or selection to PrivateBin",
   "version": "0.0.1",
   "author": {"name": "Mike White"},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikehw/send-to-privatebin.git"
+  },
   "engines": {
     "vscode": "^1.69.0"
   },
