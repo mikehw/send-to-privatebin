@@ -1,13 +1,14 @@
 {
   "name": "send-to-privatebin",
-  "displayName": "send-to-privatebin",
+  "displayName": "Send to PrivateBin",
   "description": "Quickly send the current document or selection to PrivateBin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {"name": "Mike White"},
   "repository": {
     "type": "git",
     "url": "https://github.com/mikehw/send-to-privatebin.git"
   },
+  "publisher": "MikeWhite",
   "engines": {
     "vscode": "^1.69.0"
   },
