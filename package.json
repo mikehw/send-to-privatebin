@@ -1,0 +1,88 @@
+{
+  "name": "send-to-privatebin",
+  "displayName": "send-to-privatebin",
+  "description": "Quickly send the current document or selection to PrivateBin",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:send-to-privatebin.sendSelection",
+    "onCommand:send-to-privatebin.sendDocument"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "send-to-privatebin.sendSelection",
+        "title": "Send Selection to PrivateBin"
+      },
+      {
+        "command": "send-to-privatebin.sendDocument",
+        "title": "Send Document to PrivateBin"
+      }
+    ],
+    "configuration": {
+      "title": "Send to PrivateBin",
+      "properties": {
+        "send-to-privatebin.url": {
+          "order": 0,
+          "type": "string",
+          "format": "uri",
+          "default": "https://privatebin.net/",
+          "description": "Base URL of the privatebin site to use, e.g. https://privatebin.net/"
+        },
+        "send-to-privatebin.open-discussion": {
+          "order": 9,
+          "type": "boolean",
+          "default": true,
+          "description": "Enable open discussion (comments) on entries, cannot be used when burn after reading is enabled"
+        },
+        "send-to-privatebin.expiration": {
+          "order": 1,
+          "type": "string",
+          "default": "1month",
+          "enum": [
+            "5min",
+            "10min",
+            "1hour",
+            "1day",
+            "1week",
+            "1month",
+            "1year",
+            "never"
+          ],
+          "description": "Expiration time after creation"
+        },
+        "send-to-privatebin.burn-after-reading": {
+          "order": 10,
+          "type": "boolean",
+          "default": false,
+          "description": "Burn entry after reading"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.69.0",
+    "@vscode/test-electron": "^2.1.5",
+    "eslint": "^8.18.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@agc93/privatebin": "^0.0.3"
+  }
+}
